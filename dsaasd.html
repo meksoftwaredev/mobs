@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bildirim İzni</title>
+</head>
+<body>
+  <script>
+    // Notification API'nin Desteklendiğini Kontrol Edin
+    if (!('Notification' in window)) {
+      console.log('Bildirim özelliği bu tarayıcıda desteklenmiyor.');
+      return;
+    }
+
+    // Kullanıcı İzni İsteyin
+    Notification.requestPermission().then((permission) => {
+      if (permission === 'granted') {
+        console.log('Bildirim izni alındı.');
+      } else {
+        console.log('Bildirim izni reddedildi.');
+      }
+    });
+  </script>
+</body>
+</html>
